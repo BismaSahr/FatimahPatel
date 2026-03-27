@@ -135,6 +135,10 @@
 
 import React from 'react';
 import { SiFramer } from 'react-icons/si';
+import illustration from '../assets/illustrator.png';
+import figma from '../assets/figma.png';
+import photoshop from '../assets/photoshop.png';
+
 import './Specialize.css';
 
 const Specialize = () => {
@@ -156,10 +160,10 @@ const Specialize = () => {
               </svg>
 
               {/* Icon Badges positioned along the elliptical paths */}
-              <img src="src\assets\illustrator.png" alt="Illustrator" className="orbit-icon orbit-icon-ai" />
+              <img src={illustration} alt="Illustrator" className="orbit-icon orbit-icon-ai" />
 
-              <img src="src\assets\photoshop.png" alt="Photoshop" className="orbit-icon orbit-icon-ps" />
-              <img src="src\assets\figma.png" alt="Figma" className="orbit-icon orbit-icon-figma" />
+              <img src={photoshop} alt="Photoshop" className="orbit-icon orbit-icon-ps" />
+              <img src={figma} alt="Figma" className="orbit-icon orbit-icon-figma" />
 
               <div className="orbit-badge framer-badge">
                 <div className="badge-core"><SiFramer /></div>
