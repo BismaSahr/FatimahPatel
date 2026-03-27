@@ -1,7 +1,7 @@
 .testimonial-section {
     position: relative;
     width: 100%;
-    height: 792px;
+    min-height: 850px;
     background: #F6F7FC;
     overflow: hidden;
     display: flex;
@@ -22,27 +22,39 @@
     /* Space for avatars to overflow cards */
 }
 
+/* Carousel Wrapper */
+.testimonial-carousel {
+    width: calc(360px * 3 + 48px * 2); /* 3 items + 2 gaps */
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 85px 0 20px 0; /* Space for avatars and shadow */
+    position: relative;
+}
+
 /* Items Grid */
 .testimonial-items {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start; /* Alignment for sliding */
+    align-items: stretch;
     gap: 48px;
-    width: 100%;
+    width: fit-content;
     z-index: 5;
 }
 
 .testimonial-item {
     position: relative;
     width: 360px;
-    height: 289px;
+    min-width: 360px;
+    height: 380px; /* Increased height to accommodate name and longer text */
     background: #FFFFFF;
     border-radius: 25px;
-    padding: 0 43.5px;
+    padding: 60px 30px 30px 30px; /* Adjusted padding for content */
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
 }
 
 /* Avatar Overflowing */
@@ -66,13 +78,37 @@
     object-fit: cover;
 }
 
-.testimonial-body p {
+.testimonial-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.testimonial-body p.testimonial-text {
     font-family: 'Manrope', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
     text-align: center;
     color: #232E35;
+    margin: 0 0 20px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 7; /* Limit text height roughly */
+    line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.testimonial-name {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #242A41;
     margin: 0;
 }
 
@@ -191,11 +227,22 @@
 }
 
 /* Responsive */
-@media (max-width: 1100px) {
-    .testimonial-items {
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 1250px) {
+    .testimonial-carousel {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .testimonial-carousel .testimonial-items {
+        justify-content: center;
+        flex-wrap: wrap;
+        transform: none !important;
         gap: 100px;
+    }
+
+    .testimonial-arrows {
+        display: none;
     }
 
     .testimonial-section {
@@ -206,6 +253,4 @@
     .bg-pattern {
         display: none;
     }
-
-    /* Clean up mobile */
 }

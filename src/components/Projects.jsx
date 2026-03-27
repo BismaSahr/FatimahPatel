@@ -13,7 +13,8 @@ const projectData = [
         description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         bgColor: "#DEFCFF",
         patternColor: "#717EA7",
-        image: image1
+        image: image1,
+        link: "https://www.behance.net/gallery/246337983/Website-UI-UX-Design"
     },
     {
         id: 2,
@@ -22,7 +23,8 @@ const projectData = [
         description: "UI/UX design for Lazeez Events, emphasizing intuitive vendor browsing, bulk order workflow, and responsive, user-friendly layouts.",
         bgColor: "#EDF0F9",
         patternColor: "#CBC1F6",
-        image: image2
+        image: image2,
+        link: "https://www.behance.net/gallery/246336393/Lazeez-Events-UI-UX-Design"
     },
     {
         id: 3,
@@ -31,7 +33,8 @@ const projectData = [
         description: "Designed a custom UI/UX concept, focusing on clean layouts, intuitive navigation, and engaging visuals. Created a responsive, user-friendly interface that showcases creativity, interaction design skills, and attention to user experience.",
         bgColor: "#DEE5FF",
         patternColor: "#7DE0EA",
-        image: image3
+        image: image3,
+        link: "https://www.behance.net/gallery/246337315/Dashboard-Design-for-buyer-Seller"
     }
 ];
 
@@ -70,9 +73,14 @@ const Projects = () => {
 
                                         <p className="project-desc">{project.description}</p>
 
-                                        <button className="btn btn-case-study">
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn btn-case-study text-decoration-none"
+                                        >
                                             Read Case Study <FiArrowUpRight className="ms-2" />
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
 

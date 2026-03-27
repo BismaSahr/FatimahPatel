@@ -40,7 +40,7 @@ const FAQ = () => {
                         If you have any other questions, you can contact me by email
                     </p>
                     <a href="mailto:youremail@gmail.com" className="faq-email">
-                        youremail@gmail.com
+                        Fatemah.patel@orientsoftsolutions.com
                     </a>
                 </div>
 
